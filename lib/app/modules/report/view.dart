@@ -20,12 +20,10 @@ class ReportPage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Report',
-          style: GoogleFonts.roboto(
-            textStyle: TextStyle(
-              color: Colors.black,
-              fontSize: 20.0.sp,
-              fontWeight: FontWeight.bold,
-            )
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20.0.sp,
+            fontWeight: FontWeight.bold
           ),
         ),
         backgroundColor: Colors.transparent,
@@ -98,11 +96,10 @@ class ReportPage extends StatelessWidget {
                         children: [
                           GradientText(
                             '${createdTasks == 0 ? 0 : percent}%',
-                            style: GoogleFonts.roboto(
-                                textStyle: TextStyle(
+                            style: TextStyle(
                               fontSize: 20.0.sp,
                               fontWeight: FontWeight.bold,
-                            )),
+                            ),
                             gradient: LinearGradient(colors: [
                               Color.fromARGB(255, 0, 0, 0),
                               Color.fromARGB(255, 95, 110, 138),
@@ -113,11 +110,10 @@ class ReportPage extends StatelessWidget {
                           ),
                           GradientText(
                             'Efficiency',
-                            style: GoogleFonts.roboto(
-                                textStyle: TextStyle(
+                            style: TextStyle(
                               fontSize: 12.0.sp,
                               fontWeight: FontWeight.bold,
-                            )),
+                            ),
                             gradient: LinearGradient(colors: [
                               Color.fromARGB(255, 0, 0, 0),
                               Color.fromARGB(255, 95, 110, 138),
@@ -157,11 +153,10 @@ class ReportPage extends StatelessWidget {
           children: [
             GradientText(
               '$number',
-              style: GoogleFonts.workSans(
-                  textStyle: TextStyle(
+              style: TextStyle(
                 fontSize: 16.0.sp,
                 fontWeight: FontWeight.bold,
-              )),
+              ),
               gradient: LinearGradient(colors: [
                 Color.fromARGB(255, 41, 49, 70),
                 Color.fromARGB(255, 34, 38, 48).withOpacity(0.5),
@@ -170,11 +165,10 @@ class ReportPage extends StatelessWidget {
             SizedBox(height: 2.0.wp),
             GradientText(
               text,
-              style: GoogleFonts.poppins(
-                  textStyle: TextStyle(
+              style: TextStyle(
                 fontSize: 12.0.sp,
                 fontWeight: FontWeight.bold,
-              )),
+              ),
               gradient: LinearGradient(colors: [
                 Colors.black.withOpacity(0.6),
                 Color.fromARGB(255, 56, 68, 99),

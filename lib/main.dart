@@ -5,8 +5,9 @@ import 'package:farmmobile/app/modules/home/binding.dart';
 import 'package:farmmobile/app/modules/crops/binding.dart';
 import 'package:farmmobile/app/modules/home/view.dart';
 import 'package:get/get.dart';
-import 'package:get_storage/geft_storage.dart';
+import 'package:get_storage/get_storage.dart';
 import 'package:flutter_easyloading/flutter_easyloading.dart';
+
 
 void main() async {
   await GetStorage.init();
@@ -24,9 +25,11 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: 'WishFlow - ToDo',
       debugShowCheckedModeBanner: false,
+      theme: ThemeData(fontFamily: 'Quicksand'),
       home: const HomePage(),
       initialBinding: HomeBinding(),
       builder: EasyLoading.init(),
     );
   }
 }
+

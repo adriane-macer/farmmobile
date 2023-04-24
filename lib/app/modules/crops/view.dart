@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:google_fonts/google_fonts.dart';
+// import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
 import 'package:step_progress_indicator/step_progress_indicator.dart';
 import 'package:farmmobile/app/core/utils/extensions.dart';
@@ -27,12 +27,10 @@ class CropsPage extends StatelessWidget {
       backgroundColor: Color.fromARGB(255, 255, 250, 244),
       appBar: AppBar(
         title: Text('Crop Database',
-          style: GoogleFonts.roboto(
-            textStyle: TextStyle(
-              color: Colors.black,
-              fontSize: 20.0.sp,
-              fontWeight: FontWeight.bold,
-            )
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 20.0.sp,
+            fontWeight: FontWeight.bold,
           ),
         ),
         backgroundColor: Colors.transparent,
