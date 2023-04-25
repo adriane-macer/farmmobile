@@ -32,6 +32,7 @@ class CropsController extends GetxController {
   }
 
   void onSearchChanged({String? value}) {
+    debugPrint("CropsController.onSearchChanged: $value");
     if (value == null || value.isEmpty) {
       filteredCrops(crops);
       return;

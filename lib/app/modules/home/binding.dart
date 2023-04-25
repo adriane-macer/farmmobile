@@ -1,3 +1,4 @@
+import 'package:farmmobile/app/modules/crops/controller.dart';
 import 'package:get/get.dart';
 import 'package:farmmobile/app/data/providers/task/provider.dart';
 import 'package:farmmobile/app/modules/home/controller.dart';
@@ -15,5 +16,7 @@ class HomeBinding implements Bindings {
         ),
       ),
     );
+
+    Get.lazyPut(()=> CropsController());
   }
 }

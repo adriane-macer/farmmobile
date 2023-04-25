@@ -1,3 +1,4 @@
+import 'package:farmmobile/app/data/services/crop.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 // import 'package:google_fonts/google_fonts.dart';
@@ -13,18 +14,38 @@ import 'package:farmmobile/app/data/models/crop.dart';
 import '../../core/utils/gradientText.dart';
 
 
-class CropsPage extends StatelessWidget {
-  final homeCtrl = Get.find<HomeController>();
-  // final crop_controller = Get.find<CropsController>();  
+class CropsPage extends StatefulWidget {
+
+  const CropsPage({super.key});
+
+  @override
+  State<CropsPage> createState() => _CropsPageState();
+}
+
+class _CropsPageState extends State<CropsPage> {
+  // final homeCtrl = Get.find<HomeController>();
+
+  // final crop_controller = Get.find<CropsController>();
   final TextEditingController _textEditingController = TextEditingController();
 
+  @override
+  void initState() {
+    debugPrint("_CropsPageState.initState: ");
+    super.initState();
+  }
 
-  CropsPage({super.key});
+
+  @override
+  void dispose() {
+    _textEditingController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
+    final cropController = Get.find<CropsController>();
     return Scaffold(
-      backgroundColor: Color.fromARGB(255, 255, 250, 244),
+      backgroundColor: const Color.fromARGB(255, 255, 250, 244),
       appBar: AppBar(
         title: Text('Crop Database',
           style: TextStyle(
@@ -37,7 +58,7 @@ class CropsPage extends StatelessWidget {
         elevation: 0.0,
         actions: <Widget>[
           IconButton(
-            icon: Icon(Icons.plus_one, color: Colors.black),
+            icon: const Icon(Icons.plus_one, color: Colors.black),
             onPressed: () {
               // if (controller.tasks.isNotEmpty) {
               //   Get.to(() => AddDialog(), transition: Transition.downToUp);
@@ -46,8 +67,8 @@ class CropsPage extends StatelessWidget {
               // }
             },
           )
-        ],        
-      ),   
+        ],
+      ),
       body: SafeArea(
         child: SingleChildScrollView(
           child: Column(
@@ -62,9 +83,9 @@ class CropsPage extends StatelessWidget {
                         height: 30,
                         child: TextField(
                           controller: _textEditingController,
-                          // onChanged: (_) {
-                          //   controller.onSearchChanged(value: _);
-                          // },
+                          onChanged: (_) {
+                            cropController.onSearchChanged(value: _);
+                          },
                           decoration: const InputDecoration(
                               border: OutlineInputBorder(), hintText: "Search"),
                           textAlignVertical: TextAlignVertical.bottom,
@@ -75,15 +96,15 @@ class CropsPage extends StatelessWidget {
                   ],
                 ),
               ),
-              // Obx(() => crop_controller.filteredCrops.isEmpty ? const Text("No data") 
-              //   : Column(
-              //     children: [
-              //       ...crop_controller.filteredCrops
-              //         .map((element) => _information(context, element))
-              //         .toList(),
-              //     ],
-              //   ),
-              // ),
+              Obx(() => cropController.filteredCrops.isEmpty ? const Text("No data")
+                : Column(
+                  children: [
+                    ...cropController.filteredCrops
+                      .map((element) => _information(context, element))
+                      .toList(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
@@ -146,9 +167,9 @@ class CropsPage extends StatelessWidget {
                         Icon(Icons.star),
                         Text('Rating: 4.5'),
                         Icon(Icons.star),
-                        Text('Rating: 5'),                        
+                        Text('Rating: 5'),
                       ],
-                    ),                                        
+                    ),
                   ],
                 ),
               ),

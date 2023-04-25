@@ -161,7 +161,7 @@ class HomeController extends GetxController {
   int getDoneTodo(Task task) {
     // res refers to 'Result'
     var res = 0;
-    for (int i = 0; i < task.todos!.length; i++) {
+    for (int i = 0; i < (task.todos?.length??0); i++) {
       if (task.todos![i]['done'] == true) {
         res += 1;
       }

@@ -1,3 +1,4 @@
+import 'package:farmmobile/app/data/services/crop.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:farmmobile/app/data/services/storage/services.dart';
@@ -12,6 +13,7 @@ import 'package:flutter_easyloading/flutter_easyloading.dart';
 void main() async {
   await GetStorage.init();
   await Get.putAsync(() => StorageService().init());
+  await Get.putAsync(() => CropService().init());
   runApp(const MyApp());
 }
 

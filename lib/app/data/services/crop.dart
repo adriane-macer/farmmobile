@@ -16,6 +16,7 @@ class CropService extends GetxService {
         await rootBundle.loadString("assets/jsons/crops.json");
 
     final jsonResponse = jsonDecode(jsonString) as List;
+    debugPrint("CropService.init: $jsonResponse");
     try {
       crops = jsonResponse.map((data) => Crop.fromJson(data)).toList();
     } catch (e) {

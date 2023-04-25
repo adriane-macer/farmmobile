@@ -36,6 +36,7 @@ flutter:
     - assets/treatments/
     - assets/nutritions/
     - assets/vegs/
+    - assets/crops/
     - assets/fonts/  
     # - lang/
   fonts:

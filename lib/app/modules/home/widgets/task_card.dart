@@ -152,20 +152,22 @@ Widget _buildTaskStatus(task) {
 Widget _buildTaskStatusDone(task) {
   var createdTasksCurrent = Get.find<HomeController>().getDoneTodo(task);
 
-  return Container(
-    width: 64,
-    height: 27,
-    decoration: BoxDecoration(
-      color: const Color.fromARGB(255, 252, 244, 243),
-      borderRadius: BorderRadius.circular(20),
-    ),
-    child: Center(
-      child: Text(
-        '$createdTasksCurrent done',
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          fontSize: 10,
-          color: Colors.black54,
+  return Expanded(
+    child: Container(
+      // width: 64,
+      height: 27,
+      decoration: BoxDecoration(
+        color: const Color.fromARGB(255, 252, 244, 243),
+        borderRadius: BorderRadius.circular(20),
+      ),
+      child: Center(
+        child: Text(
+          '$createdTasksCurrent done',
+          style: const TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 10,
+            color: Colors.black54,
+          ),
         ),
       ),
     ),
